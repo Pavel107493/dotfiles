@@ -1,0 +1,7 @@
+[general]
+import = [
+    "~/.config/alacritty/alacritty.toml"
+]
+
+[terminal.shell]
+program = "/usr/bin/zellij"

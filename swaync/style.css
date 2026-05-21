@@ -1,0 +1,323 @@
+/* =============================================
+   ЦВЕТОВАЯ ПАЛИТРА (Kanagawa тема)
+   Меняй здесь — изменится везде
+   ============================================= */
+@define-color cc-bg #16161d;              /* Фон панели уведомлений */
+@define-color noti-border-color #dcd7ba;  /* Цвет рамки уведомлений */
+@define-color noti-bg #11111b;            /* Фон самих уведомлений */
+@define-color noti-bg-darker #2b2b39;    /* Фон виджетов (чуть темнее) */
+@define-color noti-bg-hover #1b1b2b;     /* Фон при наведении */
+@define-color noti-bg-focus #1b1b1b;     /* Фон при фокусе */
+@define-color noti-close-bg #dcd7ba;     /* Цвет кнопки закрытия */
+@define-color noti-close-bg-hover #dcd7ba; /* Кнопка закрытия при наведении */
+@define-color text-color #dcd7ba;        /* Основной цвет текста */
+@define-color text-color-disabled #828282; /* Цвет заблокированного текста */
+@define-color bg-selected #7e9cd8;       /* Цвет выделения */
+@define-color border-green #76946a;      /* Цвет основной зелёной рамки */
+@define-color red-base #c34043;          /* Красный (кнопка закрытия, DND вкл.) */
+@define-color red-hover #e46876;         /* Красный при наведении */
+@define-color green-base #98bb6c;        /* Зелёный (заголовки уведомлений) */
+@define-color blue-base #7e9cd8;         /* Синий (заголовки виджетов) */
+
+/* =============================================
+   ГЛОБАЛЬНЫЕ СТИЛИ
+   ============================================= */
+* {
+  font-family: "JetBrainsMono NFM SemiBold", monospace; /* Шрифт для всего интерфейса */
+  border-radius: 10px; /* Базовое скругление для всех элементов */
+}
+
+/* =============================================
+   СТРОКИ УВЕДОМЛЕНИЙ В ПАНЕЛИ
+   ============================================= */
+
+/* Фон строки при наведении или фокусе */
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  opacity: 1;
+  background: @noti-bg-darker;
+}
+
+/* Убираем отступы и рамку фокуса у строк */
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================
+   СКРУГЛЕНИЯ ДЛЯ ЭЛЕМЕНТОВ УВЕДОМЛЕНИЙ
+   Явно дублируем 10px для надёжности
+   ============================================= */
+.notification,
+.notification-content,
+.notification-action,
+.notification-default-action,
+.inline-reply-entry,
+.inline-reply-button,
+.widget-title,
+.widget-title>button,
+.widget-dnd,
+.widget-dnd>switch,
+.widget-dnd>switch slider,
+.widget-label>label,
+.widget-buttons-grid,
+.widget-buttons-grid>flowbox>flowboxchild>button,
+.widget-volume,
+.widget-backlight,
+.widget-mpris,
+.widget-mpris>box>button,
+.widget-mpris-player,
+.widget-mpris-album-art {
+  border-radius: 10px; /* Скругление углов — меняй это значение */
+}
+
+/* =============================================
+   САМО УВЕДОМЛЕНИЕ (карточка)
+   ============================================= */
+.notification {
+  background: #000000;      /* Фон карточки убран */
+  border: 2px solid @border-green; /* Зелёная рамка */
+  margin: 3px -2px 3px 0;      /* Отступы между уведомлениями */
+}
+
+/* =============================================
+   КНОПКА ЗАКРЫТИЯ (×) НА КАРТОЧКЕ
+   ============================================= */
+.close-button {
+  background: @red-base;        /* Красный фон */
+  color: @cc-bg;                /* Цвет иконки × */
+  text-shadow: none;
+  padding: 0;
+  margin-top: 5px;
+  margin-right: 5px;
+  opacity: 0;                   /* Скрыта по умолчанию */
+  transition: opacity 0.2s ease-in-out; /* Плавное появление */
+  border-radius: 10px;
+  border: none;
+}
+
+/* Показываем кнопку при наведении на уведомление */
+.notification:hover .close-button {
+  opacity: 1;
+}
+
+/* Кнопка закрытия при наведении */
+.close-button:hover {
+  background: @red-hover;       /* Более яркий красный */
+  box-shadow: none;
+  transition: all 0.15s ease-in-out;
+}
+
+/* =============================================
+   КНОПКИ ДЕЙСТВИЙ (под уведомлением)
+   ============================================= */
+.notification-action {
+  border: 2px solid @border-green; /* Рамка кнопок действий */
+}
+
+/* Кнопки действий при наведении */
+.notification-default-action:hover,
+.notification-action:hover {
+  color: @blue-base;            /* Синий текст */
+  background: @cc-bg;
+}
+
+/* =============================================
+   ВСТРОЕННЫЙ ОТВЕТ (поле ввода)
+   ============================================= */
+.inline-reply-entry {
+  background: @noti-bg-darker;
+  color: @text-color;
+  caret-color: @text-color;    /* Цвет курсора */
+  border: 1px solid @noti-border-color;
+}
+
+/* Кнопка отправки в поле ввода */
+.inline-reply-button {
+  margin-top: 4px;
+  margin-left: 4px;
+  background: @noti-bg;
+  border: 1px solid @noti-border-color;
+  color: @text-color;
+}
+
+/* Кнопка отправки — заблокированное состояние */
+.inline-reply-button:disabled {
+  background: transparent;
+  color: @text-color-disabled;
+  border: 1px solid transparent;
+}
+
+/* Кнопка отправки при наведении */
+.inline-reply-button:hover {
+  background: @noti-bg-hover;
+}
+
+/* =============================================
+   ТЕКСТ В УВЕДОМЛЕНИИ
+   ============================================= */
+
+/* Заголовок уведомления (название приложения и т.п.) */
+.summary {
+  font-size: 12px;              /* Размер заголовка */
+  font-weight: 700;
+  background: transparent;
+  color: @green-base;           /* Зелёный цвет заголовка */
+  text-shadow: none;
+}
+
+/* Время уведомления */
+.time {
+  font-size: 12px;
+  font-weight: 700;
+  background: transparent;
+  color: @text-color;
+  text-shadow: none;
+  margin-right: 18px;           /* Отступ от правого края */
+}
+
+/* Тело (текст) уведомления */
+.body {
+  font-size: 11px;              /* Размер текста тела */
+  font-weight: 400;
+  background: transparent;
+  color: @text-color;
+  text-shadow: none;
+}
+
+/* =============================================
+   ПАНЕЛЬ УВЕДОМЛЕНИЙ (Control Center)
+   ============================================= */
+.control-center {
+  background: @cc-bg;           /* Фон всей панели */
+  border-radius: 20px;
+  border: 2px solid #aeaeae; /* Зелёная рамка панели */
+}
+
+
+
+/* =============================================
+   ВИДЖЕТ: НЕ БЕСПОКОИТЬ (DND)
+   ============================================= */
+.widget-dnd {
+  background: @noti-bg-darker;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  font-size: large;
+  color: @blue-base;
+}
+
+/* Тумблер DND — выключен */
+.widget-dnd>switch {
+  background: @blue-base;       /* Синий = DND выключен */
+  border-radius: 10px;
+}
+
+/* Тумблер DND — включён */
+.widget-dnd>switch:checked {
+  background: @red-base;        /* Красный = DND включён */
+  border: 1px solid @red-base;
+}
+
+/* =============================================
+   ВИДЖЕТ: МЕТКА (LABEL)
+   ============================================= */
+.widget-label>label {
+  font-size: 1rem;
+  color: @text-color;
+  margin: 10px;
+}
+
+/* =============================================
+   ВИДЖЕТ: СЕТКА КНОПОК (быстрые действия)
+   ============================================= */
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 2px;
+  margin: 10px 10px 10px 10px;
+  border-radius: 30px;
+  background: #333341;
+}
+
+/* Отдельная кнопка в сетке */
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  margin: 3px;
+  padding: 2px 19px;            /* Размер кнопок — меняй padding */
+  background: @cc-bg;
+  color: @text-color;
+  border-radius: 16px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Кнопка при наведении */
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  outline: none;
+  box-shadow: none;
+  background: @blue-base;       /* Синий фон */
+  color: @cc-bg;
+}
+
+/* Кнопка нажата/активна */
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+  background: @green-base;      /* Зелёный фон */
+  color: @cc-bg;
+}
+
+/* =============================================
+   ВИДЖЕТ: ГРОМКОСТЬ И ЯРКОСТЬ
+   ============================================= */
+.widget-volume,
+.widget-backlight {
+  background: @noti-bg-darker;
+  padding: 5px;
+  margin: 5px 10px;
+  font-size: 2rem;              /* Размер иконок громкости/яркости */
+  color: @blue-base;
+}
+
+/* =============================================
+   ВИДЖЕТ: МЕДИАПЛЕЕР (MPRIS)
+   ============================================= */
+.widget-mpris {
+  color: @text-color;
+  background: @noti-bg-darker;
+  margin: 0px 10px 10px 10px;
+  box-shadow: none;
+}
+
+/* Кнопки управления, плеер и обложка альбома */
+.widget-mpris>box>button,
+.widget-mpris,
+.widget-mpris-player,
+.widget-mpris-album-art {
+  border-radius: 20px;
+  box-shadow: none;
+  margin: 10px;
+}
+
+/* Скрываем фоновое изображение обложки */
+picture.mpris-background {
+  opacity: 0;                   /* Поставь 1 чтобы показать */
+}
+.widget-mpris-album-art {
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+}
+/* =============================================
+   КНОПКИ ВНУТРИ УВЕДОМЛЕНИЯ
+   ============================================= */
+
+/* Кнопка действия (без наведения) */
+.notification-action>button {
+  color: @text-color;
+  border-radius: 10px;
+}
+
+/* Кнопка действия при наведении */
+.notification-action>button:hover {
+  background-color: @border-green; /* Зелёный фон */
+  color: @cc-bg;
+}

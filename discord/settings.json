@@ -1,0 +1,16 @@
+{
+  "BACKGROUND_COLOR": "#121214",
+  "openH264Enabled": true,
+  "offloadAdmControls": true,
+  "chromiumSwitches": {},
+  "SKIP_HOST_UPDATE": true,
+  "SKIP_MODULE_UPDATE": true,
+  "IS_MAXIMIZED": false,
+  "IS_MINIMIZED": false,
+  "WINDOW_BOUNDS": {
+    "x": 6,
+    "y": 34,
+    "width": 1354,
+    "height": 728
+  }
+}

@@ -1,0 +1,87 @@
+session_name "1" // Имя новой сессии по умолчанию
+attach_to_session true // Если сеанс с именем, указанным в session_name, уже существует, присоединитесь к нему вместо создания нового.
+
+default_layout "compact"
+// simplified_ui true // Делает вкладки прямоугольными
+copy_on_select true // Копирование текста сразу после выделения
+pane_frames false // Раки панелей
+show_startup_tips false 
+mouse_mode true // Использование мыши для работы с панелями
+
+ 
+
+/////////////////////////////
+////////    ТЕМА    ////////
+///////////////////////////
+
+themes {
+    mynord {
+        fg "#242424" // Цвет неактивных вкладок
+        bg "#2E3440" // Как будто нигде не юзается при компактном режиме
+        black "#000000" // Фон панели и цвет текста на вкладках
+        red "#BF616A" // 
+        green "#80A0FF" // Цвет активной плашки и индикатора режима ввода
+        yellow "#EBCB8B" // 
+        blue "#81A1C1" // 
+        magenta "#B48EAD"
+        cyan "#88C0D0"
+        white "#262626" // Цвет текста слева от вкладок
+        orange "#b30000" // Цвет надписи scroll на панели
+    }
+}
+
+// theme "gruvbox-dark"
+// theme "vesper"
+// theme "catppuccin-macchiato"
+theme "mynord"
+
+////////////////////////////////
+////////    ХОТКЕИ     ////////
+//////////////////////////////
+
+keybinds {
+    normal {
+        unbind "Ctrl p"
+        unbind "Ctrl s"
+        unbind "Ctrl n"
+        unbind "Ctrl b"
+        unbind "Ctrl o"
+        unbind "Ctrl t"
+        unbind "Ctrl h"
+        unbind "Ctrl g"
+        unbind "Ctrl q"
+        bind "Alt x" { CloseFocus; SwitchToMode "normal"; }
+        bind "Alt t" { SwitchToMode "tab"; }
+        bind "Alt p" { SwitchToMode "pane"; }
+        bind "Alt n" { SwitchToMode "resize"; }
+        bind "Alt s" { SwitchToMode "scroll"; }
+    }
+
+    tab {
+        bind "Alt t" { SwitchToMode "normal"; }
+        bind "Alt p" { SwitchToMode "pane"; }
+        bind "Alt n" { SwitchToMode "resize"; }
+        bind "Alt s" { SwitchToMode "scroll"; }
+    }
+
+    pane {
+        bind "Alt p" { SwitchToMode "normal"; }
+        bind "Alt t" { SwitchToMode "tab"; }
+        bind "Alt n" { SwitchToMode "resize"; }
+        bind "Alt s" { SwitchToMode "scroll"; }
+    }
+
+    resize {
+        bind "Alt n" { SwitchToMode "normal"; }
+        bind "Alt t" { SwitchToMode "tab"; }
+        bind "Alt p" { SwitchToMode "pane"; }
+        bind "Alt s" { SwitchToMode "scroll"; }
+    }
+
+    scroll {
+        bind "Alt s" { SwitchToMode "normal"; }
+        bind "Alt t" { SwitchToMode "tab"; }
+        bind "Alt p" { SwitchToMode "pane"; }
+        bind "Alt n" { SwitchToMode "resize"; }
+    }
+}

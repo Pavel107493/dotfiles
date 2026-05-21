@@ -1,0 +1,144 @@
+@import "../../.config/hypr/colors/color.css";
+@define-color ac1 #aeaeae;
+@define-color bg1 rgba(0, 0, 0, 1.0);
+* {
+font-family: "Adwaita Sans Medium";
+font-weight: 600;
+}
+#waybar .module {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+/* Общий сброс фона основной панели */
+window#waybar {
+    background: transparent;
+    margin: 50px 50px;
+    border-radius: 12px;  /* Фиксированное скругление */
+    padding: 0 10px;  /* Фиксированные отступы */
+    margin: 3px 3px;  /* Фиксированные margins */
+}
+
+/* Стили для часов и воркспэйсов (черные капсулы) */
+#pulseaudio,
+#custom-notifications,
+#custom-player,
+#memory,
+#backlight-slider,
+#battery,
+#language,
+#custom-swaync,
+#network,
+#clock {
+    background-color: @bg1;
+    color: @ac1;
+    border-radius: 30px;
+    padding: 2px 10px;
+    margin: 0px 5px;
+    font-size: 10px;
+
+}
+#backlight {
+    background-color: @bg1;
+    color: @ac1;
+    border-radius: 30px;
+    padding: 2px 10px;
+    padding-right: 11px;
+    padding-left: 7px;
+    margin: 0px 5px;
+    font-size: 13px;
+
+}
+#tray {
+    background-color: @bg1;
+    color: @ac1;
+    border-radius: 30px;
+    padding: 2px 8px;
+    margin: 0px 5px;
+    font-size: 10px;
+
+}
+#workspaces {
+    background-color: @bg1; /* Темный цвет фона */
+    color: @itc;
+    border-radius: 20px;
+    padding: 2px 3px;
+    margin: 0 5px;
+}
+
+
+/* Убираем лишние отступы у кнопок воркспэйсов */
+#workspaces button {
+    background: transparent;
+    border-radius: 10px;
+    color: @itc;
+    min-height: 0;
+    margin: 2px 2px;
+    padding: 0px 3px;
+
+    transition: all 0.1s ease-out;
+}
+
+/* Выделение активного воркспэйса (белая капсула внутри) */
+#workspaces button.active {
+    background: @itc; /*linear-gradient(to bottom, @itc, shade(@itc, 3.2)); */
+    color: @bg1;
+    border-radius: 10px;
+    padding: 0px 7px;
+    margin: 2px 2px;
+
+    transition: all 0.1s ease-out;
+}
+
+#pulseaudio-slider,
+#backlight-slider {
+    min-width: 140px; /* Увеличьте это число по вкусу */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* 2. Заполненная часть ползунка (слева от бегунка) */
+#pulseaudio-slider,
+#backlight-slider highlight {
+    background-color: @itc; /* Голубой цвет (измените на свой) */
+    border-radius: 5px;
+}
+tooltip {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;      /* Убирает box-тени */
+    text-shadow: none;
+}
+
+tooltip label {
+    background-color: @bg1;  /* Тёмный фон */
+    color: @itc;             /* Светлый текст */
+    border: none;  /* Рамка */
+    border-radius: 80px;
+    padding: 8px 12px;
+    margin: 4px;
+    box-shadow: none;  
+    font-size: 10px;
+}
+
+
+#brightness scale slider {
+    min-width: 20px;      /* толщина ползунка по горизонтали */
+    min-height: 20px;     /* толщина ползунка по вертикали */
+    border-radius: 10px;  /* скругление ползунка */
+}
+
+#brightness scale trough {  /* вся дорожка (трек) */
+    min-height: 8px;       /* общая толщина трека */
+    border-radius: 4px;
+}
+
+#brightness scale trough slider {  /* заполненная часть */
+    background-color: transparent;
+    min-width: 0px; /* Увеличьте это число по вкусу */
+    min-height: 0px;
+}
+
+#brightness scale trough highlight {  /* незакрашенная часть */
+    background-color: @itc;
+    min-height: 8px;
+}

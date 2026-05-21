@@ -1,0 +1,2 @@
+(include "./widgets/clock/clock.yuck")
+(include "./widgets/activate-linux/eww.yuck")

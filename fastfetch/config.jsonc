@@ -1,0 +1,42 @@
+{
+    "logo": {
+        "type": "kitty",
+        "source": "$HOME/.config/fastfetch/arch_logo.png",
+        "width": 24,
+        "height": 10,
+        "padding": { 
+            "top": 2,  // картинка остаётся сверху
+            "left": 3
+        }
+    },
+    "modules": [
+        // ПУСТЫЕ СТРОКИ поднимают текст к картинке
+        {"type": "custom", "format": ""}, 
+        {"type": "custom", "format": ""}, 
+        {"type": "custom", "format": ""}, 
+        
+        {"type": "custom", "format": ""}, 
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"},
+        
+        "os",
+        "de", 
+        "shell", 
+        "kernel", 
+        "uptime", 
+        "wm", 
+        "theme", 
+        "terminal", 
+        "packages",
+        "host",
+        
+        {"type": "custom", "format": ""},
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"},
+                // ОТПАДЫ СНИЗУ ↓
+        {"type": "custom", "format": ""}, 
+        {"type": "custom", "format": ""},
+        {"type": "custom", "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m "},
+        {"type": "custom", "format": ""}
+    ]
+}
+
+// rm -rf ~/.cache/fastfetch/images

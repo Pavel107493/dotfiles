@@ -1,0 +1,29 @@
+# Основная ширина и местоположение
+width=340
+height=80
+anchor=top-right
+margin=15,15,5
+padding=10
+
+# Цвета: тёмная полупрозрачная тема
+background-color=#000000
+text-color=#ffffff
+border-size=0
+border-color=#404040
+border-radius=10
+
+# Шрифт (можно поменять на свой, например JetBrainsMono)
+font=FiraCode Nerd Font 9
+
+# Иконки и разметка
+icons=1
+max-icon-size=40
+markup=1
+
+# Формат текста: приложение + заголовок + тело
+format=\n<b>%s</b>\n%b
+# format=%a\n<b>%s</b>\n%b
+
+# Таймаут и группировка
+default-timeout=5000
+group-by=app-name

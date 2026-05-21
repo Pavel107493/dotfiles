@@ -1,0 +1,154 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 22, // Установите желаемую высоту в пикселях
+    "margin-top": 3,
+    "margin-left": 4,
+    "margin-right": 4,
+    "spacing": 0,
+    // ... остальные модули
+
+    "modules-left": [ "tray", "network", "memory" ],
+    "modules-center": ["clock", "hyprland/workspaces"],
+    "modules-right": ["hyprland/language", "pulseaudio", "group/brightness", "battery"],
+
+    "clock": {
+        "interval": 1,
+        "format": "{:%I:%M %p}", //:%I:%M:%p
+        "tooltip": false
+    },
+
+
+"hyprland/workspaces": {
+    "format": "{icon} {windows}",
+    "persistent-workspaces": {
+        "*": 1
+    },
+    "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3"
+    },
+    "window-rewrite": {
+        "class<>": "",
+        "class<GitKraken>":" ",
+        "class<com-azefsw-audioconnect-desktop-app-MainKt>": " ",
+        "class<firefox>": " ",
+        "class<google-chrome>": " ",
+        "class<org.telegram.desktop>": " ",
+        "class<discord>": " ",
+        "class<code>": " ",
+        "class<code-oss>": " ",
+        "class<codium>": " ",
+        "class<sublime_text>": " ",
+        "class<nemo>": " ",
+        "class<kitty>": " ",
+        "class<Alacritty>": " ",
+        "class<gimp>": " ",
+        "class<localsend_app>": "󰋷 ",
+        "class<blueman-manager>": "󰂯 ",
+        "class<Perplexity>": " ",
+        "class<Spotify>": " ",
+        "class<chromium>": " ",
+        "title<.*youtube.*>": " ",
+        "title<.*nvim.*>": " ",
+        "class<steam>": " "
+    },
+    "window-rewrite-default": " ",
+    "format-window-separator": "",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1"
+},
+    "network": {
+        "format-wifi": "    {essid}  {bandwidthTotalBits}",
+        "format-ethernet": "󰀂  {bandwidthTotalBits}",
+        "format-linked": "  {bandwidthTotalBits}",
+        "format-disconnected": "⚠",
+        "format-disabled": " Internet Off ", 
+        "tooltip-format": "{ifname} {bandwidthTotalBits}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "interval": 5
+    },
+
+    "tray": {
+        "icon-size": 15,
+        "spacing": 2
+    },
+
+    "hyprland/language": {
+        "format": "   {}", 
+        "format-en": "English", // Можно оставить текст или убрать его
+        "format-ru": "Russian",
+        "on-click": "hyprctl switchxkblayout all next"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume} % {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" ", "  ", "   "]
+        },
+        "on-click": "pavucontrol" // Требует установки pavucontrol
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity} % ",
+        "format-charging": "   {capacity} %",
+        "format-plugged": "   {capacity} %",
+        "format-alt": "{icon}   {capacity} %",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "on-click": "" ,
+        "tooltip": false
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": [ "󰃝", "󰃞", "󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "tooltip": false
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight" // Опционально: укажите конкретное устройство
+    },
+    "group/brightness": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 0, // Скорость анимации (мс)
+            "children-class": "not-power", // Класс для стилизации скрытых элементов
+            "transition-left-to-right": false, // Направление открытия
+            "click-to-reveal": true
+        },
+        "modules": [
+            "backlight",        // Основная иконка (всегда видна)
+            "backlight/slider"  // Скрытый ползунок (появится при наведении или клике)
+        ]
+    },
+    "memory": {
+        "interval": 30,
+        "format": "{used:0.1f}Gb/4{total}Gb", //{total}
+        "max-length": 20
+    },
+    "custom/notifications": {
+        "format": "󰂚",
+        "on-click": "swaync-client -t",
+        "tooltip": false
+    }
+}

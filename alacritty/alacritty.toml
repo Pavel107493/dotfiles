@@ -1,0 +1,119 @@
+[general]
+import = [
+    "~/.config/hypr/colors/term_alacritty.toml"
+]
+[env]
+TERM = "xterm-256color"
+
+######################################################################
+# ОСНОВНЫЕ НАСТРОЙКИ (ШРИФТЫ)
+######################################################################
+
+[font]
+size = 9.5
+
+[font.normal]
+family = "CaskaydiaMono NFM"
+style = "Regular"
+
+[font.bold]
+family = "CaskaydiaMono NFM"
+style = "Bold"
+
+[font.italic]
+family = "CaskaydiaMono NFM"
+style = "Italic"
+
+[font.bold_italic]
+family = "CaskaydiaMono NFM"
+style = "Bold Italic"
+
+[font.offset]
+x = 0
+y = 0  # Уменьшает интервал. Попробуйте -2 или -3 для еще большей плотности.
+
+######################################################################
+# КУРСОР И ОКНО
+######################################################################
+
+[cursor.style]
+shape = "Beam"   # Форма: "Block" (блок), "Underline" (подчеркивание) или "Beam" (вертикальная черта)
+blinking = "Off"   # Режим мигания: "Never", "Off", "On" или "Always"
+
+[window]
+# window_margin_width 3 из kitty превращается в padding
+padding = { x = 0, y = 0 }
+dynamic_title = true
+opacity = 0.9 # = непрозрачный, 0.0 = полностью прозрачный
+dynamic_padding = true
+[mouse]
+hide_when_typing = true
+
+######################################################################
+# ТЕМА (НЕ СМЕЙ МЕНЯТЬ!!!)
+######################################################################
+
+[colors.primary]
+background = "#000000"
+foreground = "#c8c8c8"
+
+[colors.cursor]
+cursor = "#a5a5a5"
+text = "#000000"
+
+[colors.selection]
+background = "#666666"
+text = "#000000"
+
+[colors.normal]
+black   = "#292531"
+# red     = "#b32e39"
+# green   = "#1dd0e7"
+# yellow  = "#a1795c"
+# blue    = "#2f5990"
+# magenta = "#727399"
+# cyan    = "#44a2b2"
+# white   = "#c9c7c6"
+
+[colors.bright]
+black   = "#605d65"
+# red     = "#dd6459"
+# green   = "#1ccfe6"
+# yellow  = "#d9a728"
+# blue    = "#4281d1"
+# magenta = "#ba6dc3"
+# cyan    = "#4bc0d4"
+# white   = "#efeeef"
+
+######################################################################
+# КЛАВИШИ
+######################################################################
+
+# Копирование и вставка
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+# ПРИМЕЧАНИЕ: Alacritty не поддерживает табы (tabs) внутри себя.
+# Если вы планируете использовать tmux, бинды на табы настраиваются там.
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
