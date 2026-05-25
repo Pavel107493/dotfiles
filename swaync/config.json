@@ -58,7 +58,7 @@
         },
         {
           "label": "󰍃",
-          "command": "hyprctl exit"
+          "command": "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
         }
 
       ]

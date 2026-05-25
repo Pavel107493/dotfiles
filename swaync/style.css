@@ -1,3 +1,5 @@
+@import "../../.config/hypr/colors/color.css";
+
 /* =============================================
    ЦВЕТОВАЯ ПАЛИТРА (Kanagawa тема)
    Меняй здесь — изменится везде
@@ -35,7 +37,7 @@
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
   opacity: 1;
-  background: @noti-bg-darker;
+  background: @bg2;
 }
 
 /* Убираем отступы и рамку фокуса у строк */
@@ -76,8 +78,8 @@
    САМО УВЕДОМЛЕНИЕ (карточка)
    ============================================= */
 .notification {
-  background: #000000;      /* Фон карточки убран */
-  border: 2px solid @border-green; /* Зелёная рамка */
+  background: @bg1;      /* Фон карточки убран */
+  border: 0px solid @bg4; /* Зелёная рамка */
   margin: 3px -2px 3px 0;      /* Отступы между уведомлениями */
 }
 
@@ -85,8 +87,8 @@
    КНОПКА ЗАКРЫТИЯ (×) НА КАРТОЧКЕ
    ============================================= */
 .close-button {
-  background: @red-base;        /* Красный фон */
-  color: @cc-bg;                /* Цвет иконки × */
+  background: @bg4;        /* Красный фон */
+  color: @itc2;                /* Цвет иконки × */
   text-shadow: none;
   padding: 0;
   margin-top: 5px;
@@ -104,7 +106,7 @@
 
 /* Кнопка закрытия при наведении */
 .close-button:hover {
-  background: @red-hover;       /* Более яркий красный */
+  background: @bg2;       /* Более яркий красный */
   box-shadow: none;
   transition: all 0.15s ease-in-out;
 }
@@ -113,24 +115,24 @@
    КНОПКИ ДЕЙСТВИЙ (под уведомлением)
    ============================================= */
 .notification-action {
-  border: 2px solid @border-green; /* Рамка кнопок действий */
+  border: 2px solid @bg1; /* Рамка кнопок действий */
 }
 
 /* Кнопки действий при наведении */
 .notification-default-action:hover,
 .notification-action:hover {
-  color: @blue-base;            /* Синий текст */
-  background: @cc-bg;
+  color: @bg4;            /* Синий текст */
+  background: @bg1;
 }
 
 /* =============================================
    ВСТРОЕННЫЙ ОТВЕТ (поле ввода)
    ============================================= */
 .inline-reply-entry {
-  background: @noti-bg-darker;
-  color: @text-color;
-  caret-color: @text-color;    /* Цвет курсора */
-  border: 1px solid @noti-border-color;
+  background: @bg3;
+  color: @itc2;
+  caret-color: #ffffff;    /* Цвет курсора */
+  border: 1px solid #aeaeae;
 }
 
 /* Кнопка отправки в поле ввода */
@@ -163,7 +165,7 @@
   font-size: 12px;              /* Размер заголовка */
   font-weight: 700;
   background: transparent;
-  color: @green-base;           /* Зелёный цвет заголовка */
+  color: @itc2;           /* Зелёный цвет заголовка */
   text-shadow: none;
 }
 
@@ -172,7 +174,7 @@
   font-size: 12px;
   font-weight: 700;
   background: transparent;
-  color: @text-color;
+  color: #a5a5a5;
   text-shadow: none;
   margin-right: 18px;           /* Отступ от правого края */
 }
@@ -182,7 +184,7 @@
   font-size: 11px;              /* Размер текста тела */
   font-weight: 400;
   background: transparent;
-  color: @text-color;
+  color: @itc2;
   text-shadow: none;
 }
 
@@ -190,9 +192,9 @@
    ПАНЕЛЬ УВЕДОМЛЕНИЙ (Control Center)
    ============================================= */
 .control-center {
-  background: @cc-bg;           /* Фон всей панели */
+  background: @bg1;           /* Фон всей панели */
   border-radius: 20px;
-  border: 2px solid #aeaeae; /* Зелёная рамка панели */
+  border: 0px solid #aeaeae; /* Зелёная рамка панели */
 }
 
 
@@ -237,15 +239,15 @@
   padding: 2px;
   margin: 10px 10px 10px 10px;
   border-radius: 30px;
-  background: #333341;
+  background: @bg2;
 }
 
 /* Отдельная кнопка в сетке */
 .widget-buttons-grid>flowbox>flowboxchild>button {
   margin: 3px;
   padding: 2px 19px;            /* Размер кнопок — меняй padding */
-  background: @cc-bg;
-  color: @text-color;
+  background: @bg1;
+  color: @itc2;
   border-radius: 16px;
   transition: background-color 0.15s ease-in-out;
 }
@@ -254,14 +256,14 @@
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
   outline: none;
   box-shadow: none;
-  background: @blue-base;       /* Синий фон */
-  color: @cc-bg;
+  background: @itc;       /* Синий фон */
+  color: @bg2;
 }
 
 /* Кнопка нажата/активна */
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
-  background: @green-base;      /* Зелёный фон */
-  color: @cc-bg;
+  background: @itc;      /* Зелёный фон */
+  color: @bg2;
 }
 
 /* =============================================
@@ -303,8 +305,8 @@ picture.mpris-background {
 .widget-mpris-album-art {
   min-width: 40px;
   min-height: 40px;
-  max-width: 40px;
-  max-height: 40px;
+  /* max-width: 40px; */
+  /* max-height: 40px; */
 }
 /* =============================================
    КНОПКИ ВНУТРИ УВЕДОМЛЕНИЯ

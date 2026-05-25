@@ -153,6 +153,7 @@ def write_colors(cfg_dir, accent_hex, itc2_hex, bg_hexes):
         for name, hex_val in bg_vars.items():
             f.write(f'@define-color {name} #{hex_val};\n')
 
+    
     # --- kitty (term_acent.conf) --- без изменений
     with open(cfg_dir / 'term_acent.conf', 'w') as f:
         f.write(f'color2 #{accent_hex}\n')

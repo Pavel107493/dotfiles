@@ -9,7 +9,7 @@
 
     "modules-left": [ "tray", "network", "memory" ],
     "modules-center": ["clock", "hyprland/workspaces"],
-    "modules-right": ["hyprland/language", "pulseaudio", "group/brightness", "battery"],
+    "modules-right": ["hyprland/language", "pulseaudio", "group/brightness", "battery", "custom/notifications"],
 
     "clock": {
         "interval": 1,

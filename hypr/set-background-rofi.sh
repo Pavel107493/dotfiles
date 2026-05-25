@@ -21,8 +21,14 @@ IMAGE=$(
         -show-icons \
         -p "Wallpaper" \
         -theme-str '
+            scrollbar {
+                enabled: false;
+            }
             window {
                 height: 60%;
+                anchor: south;
+                location: south;
+                y-offset: 70px;
             }
 
             listview {
@@ -71,16 +77,20 @@ ICON=/home/pavel/.config/hypr/logo.png
 TITLE="The wallpaper has been changed"
 MESSAGE="The wallpaper has been changed"
 
-zenity --notification \
-    --window-icon="$ICON" \
-    --text="$MESSAGE"
+# zenity --notification \
+#     --window-icon="$ICON" \
+#     --text="$MESSAGE"
 
 # sleep 0.5
 
 # Смена обоев в swww
 awww img "$IMAGE" \
-    --transition-type wipe \
-    --transition-duration 1.7
+    --transition-type grow \
+    --transition-pos 0.5,0.0 \
+    --transition-duration 1.5 \
+    --transition-fps 60
+    # --transition-type wipe\
+    # --transition-duration 1.7
 
 sleep 0.5
 
@@ -95,3 +105,5 @@ python ~/.config/hypr/color_script/alacritty_theme_generator.py
 pkill -SIGUSR2 waybar
 sleep 0.5
 eww reload
+sleep 0.5
+swaync --replace

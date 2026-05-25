@@ -5,6 +5,7 @@ margin: 0px;
 border-radius: 16px;  
 border: 2px solid @itc2;
 background-color: @bg1;
+/* opacity: 0.8; */
 }
 
 #input {
