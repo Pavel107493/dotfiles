@@ -93,4 +93,5 @@ python ~/.config/hypr/color_script/theme_icon_text_color_swicher.py
 sleep 0.5
 python ~/.config/hypr/color_script/alacritty_theme_generator.py
 pkill -SIGUSR2 waybar
+sleep 0.5
 eww reload

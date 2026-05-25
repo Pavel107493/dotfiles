@@ -173,7 +173,7 @@ def main():
     if not accent_hex:
         sys.exit(1)
 
-    bg_hexes = make_bg_steps(accent_hex, steps=3)  # bg1, bg2, bg3
+    bg_hexes = make_bg_steps(accent_hex, steps=4)  # bg1, bg2, bg3
     itc2_hex = make_itc2(accent_hex, darken_factor=0.75)
 
     cfg_dir = Path.home() / '.config' / 'hypr' / 'colors'

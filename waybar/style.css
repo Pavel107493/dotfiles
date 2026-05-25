@@ -58,19 +58,17 @@ window#waybar {
 
 }
 #workspaces {
-    background-color: @bg1; /* Темный цвет фона */
+    background-color: @bg1;
     color: @itc;
     border-radius: 20px;
     padding: 2px 3px;
     margin: 0 5px;
 }
 
-
-/* Убираем лишние отступы у кнопок воркспэйсов */
 #workspaces button {
     background: transparent;
     border-radius: 10px;
-    color: @itc;
+    color: @itc2;
     min-height: 0;
     margin: 2px 2px;
     padding: 0px 3px;
@@ -78,7 +76,6 @@ window#waybar {
     transition: all 0.1s ease-out;
 }
 
-/* Выделение активного воркспэйса (белая капсула внутри) */
 #workspaces button.active {
     background: @itc; /*linear-gradient(to bottom, @itc, shade(@itc, 3.2)); */
     color: @bg1;
@@ -91,28 +88,27 @@ window#waybar {
 
 #pulseaudio-slider,
 #backlight-slider {
-    min-width: 140px; /* Увеличьте это число по вкусу */
+    min-width: 140px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-/* 2. Заполненная часть ползунка (слева от бегунка) */
 #pulseaudio-slider,
 #backlight-slider highlight {
-    background-color: @itc; /* Голубой цвет (измените на свой) */
+    background-color: @itc;
     border-radius: 5px;
 }
 tooltip {
     background-color: transparent;
     border: none;
-    box-shadow: none;      /* Убирает box-тени */
+    box-shadow: none;
     text-shadow: none;
 }
 
 tooltip label {
-    background-color: @bg1;  /* Тёмный фон */
-    color: @itc;             /* Светлый текст */
-    border: none;  /* Рамка */
+    background-color: @bg1;
+    color: @itc;           
+    border: none;
     border-radius: 80px;
     padding: 8px 12px;
     margin: 4px;
@@ -122,23 +118,23 @@ tooltip label {
 
 
 #brightness scale slider {
-    min-width: 20px;      /* толщина ползунка по горизонтали */
-    min-height: 20px;     /* толщина ползунка по вертикали */
-    border-radius: 10px;  /* скругление ползунка */
+    min-width: 20px;      
+    min-height: 20px;   
+    border-radius: 10px;
 }
 
-#brightness scale trough {  /* вся дорожка (трек) */
-    min-height: 8px;       /* общая толщина трека */
+#brightness scale trough {
+    min-height: 8px;
     border-radius: 4px;
 }
 
-#brightness scale trough slider {  /* заполненная часть */
+#brightness scale trough slider {
     background-color: transparent;
-    min-width: 0px; /* Увеличьте это число по вкусу */
+    min-width: 0px; 
     min-height: 0px;
 }
 
-#brightness scale trough highlight {  /* незакрашенная часть */
+#brightness scale trough highlight {  
     background-color: @itc;
     min-height: 8px;
 }

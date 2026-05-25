@@ -30,21 +30,20 @@ style = "Bold Italic"
 
 [font.offset]
 x = 0
-y = 0  # Уменьшает интервал. Попробуйте -2 или -3 для еще большей плотности.
+y = 0 
 
 ######################################################################
 # КУРСОР И ОКНО
 ######################################################################
 
 [cursor.style]
-shape = "Beam"   # Форма: "Block" (блок), "Underline" (подчеркивание) или "Beam" (вертикальная черта)
+shape = "Block"   # Форма: "Block" (блок), "Underline" (подчеркивание) или "Beam" (вертикальная черта)
 blinking = "Off"   # Режим мигания: "Never", "Off", "On" или "Always"
 
 [window]
-# window_margin_width 3 из kitty превращается в padding
-padding = { x = 0, y = 0 }
+padding = { x = 7, y = 4 }
 dynamic_title = true
-opacity = 0.9 # = непрозрачный, 0.0 = полностью прозрачный
+opacity = 0.9
 dynamic_padding = true
 [mouse]
 hide_when_typing = true
@@ -67,23 +66,23 @@ text = "#000000"
 
 [colors.normal]
 black   = "#292531"
-# red     = "#b32e39"
+red     = "#b32e39"
 # green   = "#1dd0e7"
-# yellow  = "#a1795c"
-# blue    = "#2f5990"
-# magenta = "#727399"
-# cyan    = "#44a2b2"
-# white   = "#c9c7c6"
+yellow  = "#a1795c"
+blue    = "#2f5990"
+magenta = "#727399"
+cyan    = "#44a2b2"
+white   = "#c9c7c6"
 
 [colors.bright]
 black   = "#605d65"
-# red     = "#dd6459"
+red     = "#dd6459"
 # green   = "#1ccfe6"
-# yellow  = "#d9a728"
-# blue    = "#4281d1"
-# magenta = "#ba6dc3"
-# cyan    = "#4bc0d4"
-# white   = "#efeeef"
+yellow  = "#d9a728"
+blue    = "#4281d1"
+magenta = "#ba6dc3"
+cyan    = "#4bc0d4"
+white   = "#efeeef"
 
 ######################################################################
 # КЛАВИШИ
@@ -99,9 +98,6 @@ mods = "Control|Shift"
 action = "Paste"
 key = "V"
 mods = "Control|Shift"
-
-# ПРИМЕЧАНИЕ: Alacritty не поддерживает табы (tabs) внутри себя.
-# Если вы планируете использовать tmux, бинды на табы настраиваются там.
 
 [[keyboard.bindings]]
 action = "IncreaseFontSize"

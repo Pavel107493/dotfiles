@@ -1,12 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 22, // Установите желаемую высоту в пикселях
+    "height": 22, 
     "margin-top": 3,
     "margin-left": 4,
     "margin-right": 4,
     "spacing": 0,
-    // ... остальные модули
 
     "modules-left": [ "tray", "network", "memory" ],
     "modules-center": ["clock", "hyprland/workspaces"],
@@ -126,19 +125,19 @@
         "min": 0,
         "max": 100,
         "orientation": "horizontal",
-        "device": "intel_backlight" // Опционально: укажите конкретное устройство
+        "device": "intel_backlight" 
     },
     "group/brightness": {
         "orientation": "horizontal",
         "drawer": {
-            "transition-duration": 0, // Скорость анимации (мс)
-            "children-class": "not-power", // Класс для стилизации скрытых элементов
-            "transition-left-to-right": false, // Направление открытия
+            "transition-duration": 0, 
+            "children-class": "not-power", 
+            "transition-left-to-right": false, 
             "click-to-reveal": true
         },
         "modules": [
-            "backlight",        // Основная иконка (всегда видна)
-            "backlight/slider"  // Скрытый ползунок (появится при наведении или клике)
+            "backlight",      
+            "backlight/slider" 
         ]
     },
     "memory": {
