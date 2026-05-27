@@ -1,0 +1,81 @@
+@import "../../.config/hypr/colors/color.css"
+;/* === Глобальный сброс для всех элементов === */
+/* Отключаем фоновые изображения по умолчанию для всех элементов */
+* {
+	background-image: none;
+	/* Отключаем плавные переходы (анимации) для всех элементов */
+	transition: 0;
+}
+
+/* === Стиль основного окна wlogout === */
+window {
+	/* Цвет фона окна: черный с очень низкой прозрачностью (почти невидимый) */
+	background-color: rgba(0, 0, 0, 0.2);
+	/* Устанавливаем текстуру "шума" как фоновое изображение окна */
+	background-image: url('./noise.png');
+}
+
+/* === Базовые стили для всех кнопок действий === */
+button {
+	/* Цвет текста на кнопках (лавандовый) */
+    color: #ffffff;
+	/* Цвет фона кнопок: белый с небольшой прозрачностью */
+	background-color: rgba(0, 0, 0, 1.0);
+	/* Убираем границу, задавая её ширину 0 и цвет (цвет здесь не отображается из-за ширины 0) */
+	border: 4px solid #d4bff9;
+	/* Сильно скругляем углы кнопок (3rem = очень большая округлость) */
+	border-radius: 16px;
+	/* Внешний отступ вокруг каждой кнопки */
+	margin: 10px;
+	/* Запрещаем повторение фонового изображения (иконки) */
+	background-repeat: no-repeat;
+	/* Выравниваем фоновое изображение (иконку) по центру кнопки */
+	background-position: center;
+	/* Задаём размер фонового изображения (иконки) - 25% от размера кнопки */
+	background-size: 15%;
+	/* Тень кнопки: две тени для создания объёмного эффекта */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	/* Шрифт для текста на кнопках */
+	font-family: Roboto;
+	/* Размер шрифта для текста на кнопках */
+	font-size: 20px;
+}
+
+/* === Стили для кнопок в состоянии: фокус, нажатие, наведение === */
+button:focus, button:active, button:hover {
+	/* Изменяем цвет фона при взаимодействии: светлый лавандовый с большей прозрачностью */
+    background-color: rgba(0, 36, 36, 1.0);
+	/* Полностью убираем стандартную браузерную обводку (outline) у кнопок */
+	outline-style: none;
+}
+
+/* === Стили для конкретных кнопок по их ID === */
+/* Указываем иконку для кнопки "Заблокировать". Функция image() пытается загрузить первую картинку, если не получается - вторую. */
+#lock {
+    background-image: image(url("/usr/share/wlogout/material_icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+/* Иконка для кнопки "Выйти из системы" (Logout) */
+#logout {
+    background-image: image(url("/usr/share/wlogout/material_icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+/* Иконка для кнопки "Спящий режим" (Suspend) */
+#suspend {
+    background-image: image(url("/usr/share/wlogout/material_icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+/* Иконка для кнопки "Гибернация" (Hibernate) */
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/material_icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+/* Иконка для кнопки "Выключение" (Shutdown) */
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/material_icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+/* Иконка для кнопки "Перезагрузка" (Reboot) */
+#reboot {
+    background-image: image(url("/usr/share/wlogout/material_icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}

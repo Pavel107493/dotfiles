@@ -146,7 +146,7 @@
         "max-length": 20
     },
     "custom/notifications": {
-        "format": "󰂚",
+        "format": "",
         "on-click": "swaync-client -t",
         "tooltip": false
     }

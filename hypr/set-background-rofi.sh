@@ -25,10 +25,11 @@ IMAGE=$(
                 enabled: false;
             }
             window {
-                height: 60%;
+                height: 50%;
+                border-radius: 15px 15px 0px 0px;
                 anchor: south;
                 location: south;
-                y-offset: 70px;
+                y-offset: 0px;
             }
 
             listview {

@@ -5,7 +5,7 @@
   "positionY": "top",
   "control-center-margin-top": 10,
   "control-center-margin-bottom": 10,
-  "control-center-margin-right": 10,
+  "control-center-margin-right": 0,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
   "timeout": 10,
@@ -13,8 +13,7 @@
   "timeout-critical": 0,
   "fit-to-screen": false,
   "control-center-width": 300,
-  "control-center-height": 700,
-  "notification-window-width": 400,
+  "notification-window-width": 300,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
@@ -22,8 +21,9 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "text-empty": "No Notification",
+  "icon-empty": "",
 
-  "widgets": [ "buttons-grid", "mpris"],
+  "widgets": [ "buttons-grid", "volume", "backlight", "mpris", "dnd"],
   "widget-config": {
     "title": {
       "text": "Notification Center",
@@ -37,10 +37,11 @@
       "loop-carousel": false
     },
     "volume": {
-      "label": "󰕾"
+      "label": " 󰕾 "
     },
     "backlight": {
-      "label": "󰃟"
+      "label": " 󰃟 ",
+      "device": "acpi_video1"
     },
     "buttons-grid": {
       "actions": [
@@ -54,13 +55,20 @@
         },
         {
           "label": "󰌾",
-          "command": "hyprlock"
+          "command": "swaync-client -t && hyprlock"
         },
         {
           "label": "󰍃",
           "command": "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+        },
+        {
+          "label": "󰖂 ",
+          "command": "~/.config/xray/xray.sh"
+        },
+        {
+          "label": " ",
+          "command": "swaync-client -t && Telegram"
         }
-
       ]
     }
   }

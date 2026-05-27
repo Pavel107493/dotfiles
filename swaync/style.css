@@ -25,7 +25,7 @@
    ГЛОБАЛЬНЫЕ СТИЛИ
    ============================================= */
 * {
-  font-family: "JetBrainsMono NFM SemiBold", monospace; /* Шрифт для всего интерфейса */
+  /* font-family: "JetBrainsMono NFM SemiBold", monospace; /1* Шрифт для всего интерфейса *1/ */
   border-radius: 10px; /* Базовое скругление для всех элементов */
 }
 
@@ -37,7 +37,6 @@
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
   opacity: 1;
-  background: @bg2;
 }
 
 /* Убираем отступы и рамку фокуса у строк */
@@ -87,7 +86,7 @@
    КНОПКА ЗАКРЫТИЯ (×) НА КАРТОЧКЕ
    ============================================= */
 .close-button {
-  background: @bg4;        /* Красный фон */
+  background: @itc;        /* Красный фон */
   color: @itc2;                /* Цвет иконки × */
   text-shadow: none;
   padding: 0;
@@ -192,8 +191,8 @@
    ПАНЕЛЬ УВЕДОМЛЕНИЙ (Control Center)
    ============================================= */
 .control-center {
-  background: @bg1;           /* Фон всей панели */
-  border-radius: 20px;
+  background: #000000;
+  border-radius: 24px 0px 0px 24px;
   border: 0px solid #aeaeae; /* Зелёная рамка панели */
 }
 
@@ -203,23 +202,24 @@
    ВИДЖЕТ: НЕ БЕСПОКОИТЬ (DND)
    ============================================= */
 .widget-dnd {
-  background: @noti-bg-darker;
-  padding: 5px 10px;
-  margin: 5px 10px;
-  font-size: large;
-  color: @blue-base;
+  background: @bg2;
+  padding: 5px;
+  margin: 0px 0px 10px 10px;
+  font-size: 2rem;              /* Размер иконок громкости/яркости */
+  border-radius: 6px 0px 0px 6px;
+  color: @itc2;
 }
 
 /* Тумблер DND — выключен */
 .widget-dnd>switch {
-  background: @blue-base;       /* Синий = DND выключен */
-  border-radius: 10px;
+  background: @bg4;       /* Синий = DND выключен */
+  border-radius: 20px;
+  margin-right: 10px
 }
 
 /* Тумблер DND — включён */
 .widget-dnd>switch:checked {
-  background: @red-base;        /* Красный = DND включён */
-  border: 1px solid @red-base;
+  background: #b30000;        /* Красный = DND включён */
 }
 
 /* =============================================
@@ -237,8 +237,8 @@
 .widget-buttons-grid {
   font-size: x-large;
   padding: 2px;
-  margin: 10px 10px 10px 10px;
-  border-radius: 30px;
+  margin: 10px 0px 10px 10px;
+  border-radius: 20px 0px 0px 6px;
   background: @bg2;
 }
 
@@ -271,13 +271,13 @@
    ============================================= */
 .widget-volume,
 .widget-backlight {
-  background: @noti-bg-darker;
+  background: @bg2;
   padding: 5px;
-  margin: 5px 10px;
+  margin: 0px 0px 10px 10px;
   font-size: 2rem;              /* Размер иконок громкости/яркости */
-  color: @blue-base;
+  border-radius: 6px 0px 0px 6px;
+  color: @itc2;
 }
-
 /* =============================================
    ВИДЖЕТ: МЕДИАПЛЕЕР (MPRIS)
    ============================================= */

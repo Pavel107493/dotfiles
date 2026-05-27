@@ -59,7 +59,8 @@ window {
 mainbox {
     spacing: 0;
     children: [ message, listview ];
-    background-color: #00000066;
+    background-color: #00000080;
+    border-radius: 15px 15px 0px 0px;
 }
 
 message {
@@ -99,6 +100,7 @@ listview {
     background-color: #00000080;
     dynamic: false;
     lines: 10;
+    border-radius: 0px 2px 2px 2px;
 }
 
 element {
