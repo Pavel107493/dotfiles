@@ -204,9 +204,9 @@
 .widget-dnd {
   background: @bg2;
   padding: 5px;
-  margin: 0px 0px 10px 10px;
+  margin: 0px 10px 10px 10px;
   font-size: 2rem;              /* Размер иконок громкости/яркости */
-  border-radius: 6px 0px 0px 6px;
+  border-radius: 10px;
   color: @itc2;
 }
 
@@ -237,8 +237,8 @@
 .widget-buttons-grid {
   font-size: x-large;
   padding: 2px;
-  margin: 10px 0px 10px 10px;
-  border-radius: 20px 0px 0px 6px;
+  margin: 10px;
+  border-radius: 20px 10px 10px 10px;
   background: @bg2;
 }
 
@@ -273,9 +273,9 @@
 .widget-backlight {
   background: @bg2;
   padding: 5px;
-  margin: 0px 0px 10px 10px;
-  font-size: 2rem;              /* Размер иконок громкости/яркости */
-  border-radius: 6px 0px 0px 6px;
+  margin: 0px 10px 10px 10px;
+  font-size: 18px;              /* Размер иконок громкости/яркости */
+  border-radius: 10px 
   color: @itc2;
 }
 /* =============================================
@@ -283,19 +283,20 @@
    ============================================= */
 .widget-mpris {
   color: @text-color;
-  background: @noti-bg-darker;
+  background: @bg2;
   margin: 0px 10px 10px 10px;
   box-shadow: none;
+  border-radius: 10px;
 }
 
 /* Кнопки управления, плеер и обложка альбома */
 .widget-mpris>box>button,
-.widget-mpris,
 .widget-mpris-player,
 .widget-mpris-album-art {
-  border-radius: 20px;
+  border-radius: 6px;
   box-shadow: none;
   margin: 10px;
+  background-color: transparent;
 }
 
 /* Скрываем фоновое изображение обложки */

@@ -1,7 +1,7 @@
 @import url("/home/pavel/.config/hypr/colors/color.css");
 
 window {
-margin: 0px;
+margin: 1px;
 border-radius: 16px;  
 border: 2px solid @itc2;
 background-color: @bg1;
@@ -18,25 +18,22 @@ border-radius: 10px;
 
 #inner-box {
 margin: 5px;
-border: none;
+border-radius: 16px;  
 background-color: @bg1;
 }
 
 #outer-box {
 margin: 5px;
 border-radius: 16px;
-border: none;
 background-color: @bg1;
 }
 
 #scroll {
 margin: 0px;
-border: none;
 }
 
 #text {
 margin: 5px;
-border: none;
 color: #D3C6AA;
 }
 

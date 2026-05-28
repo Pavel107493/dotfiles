@@ -1,5 +1,5 @@
 # nitch
-pokemon-colorscripts --random
+# pokemon-colorscripts --random
 # figlet -f small " Arch Linux"
 
 # Path to your Oh My Zsh installation.
@@ -41,12 +41,13 @@ alias inst="sudo pacman -S"
 alias insty="yay -S"
 alias remo="sudo pacman -R"
 alias up="cd ../"
-alias fucking="sudo"
 alias ls="ls --color=auto"
 alias la="la --color=auto"
 alias rm="trash-put"
 alias rp="realpath"
 alias vim="nvim"
+alias proxy10808="env https_proxy=http://127.0.0.1:10808"
+alias gitkraken="gitkraken --force-device-scale-factor=0.8 --no-deprecation"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

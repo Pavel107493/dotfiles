@@ -50,7 +50,6 @@ keybinds {
         unbind "Ctrl h"
         unbind "Ctrl g"
         unbind "Ctrl q"
-        bind "Alt x" { CloseFocus; SwitchToMode "normal"; }
         bind "Alt t" { SwitchToMode "tab"; }
         bind "Alt p" { SwitchToMode "pane"; }
         bind "Alt n" { SwitchToMode "resize"; }

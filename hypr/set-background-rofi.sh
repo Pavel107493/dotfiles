@@ -1,4 +1,13 @@
 #!/usr/bin/env sh
+WALLPAPERS_DIR="$HOME/.Wallpapers"
+TARGET_DIR="$HOME/.config"
+SYMLINK_NAME="background"
+
+# Если rofi уже запущен — убить и выйти
+if pgrep -x rofi > /dev/null 2>&1; then
+    pkill -x rofi
+    exit 0
+fi
 
 WALLPAPERS_DIR="$HOME/.Wallpapers"
 TARGET_DIR="$HOME/.config"
