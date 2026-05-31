@@ -5,10 +5,10 @@
 font-family: "Adwaita Sans Medium";
 font-weight: 600;
 }
-#waybar .module {
-    margin-left: 3px;
-    margin-right: 3px;
-}
+/* #waybar .module { */
+/*     margin-left: 0px; */
+/*     margin-right: 0px; */
+/* } */
 /* Общий сброс фона основной панели */
 window#waybar {
     background: transparent;
@@ -35,7 +35,8 @@ window#waybar {
     padding: 2px 10px;
     margin: 0px 5px;
     font-size: 10px;
-
+    margin-left: 3px;
+    margin-right: 3px;
 }
 #backlight {
     background-color: @bg1;
@@ -77,7 +78,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: @itc; /*linear-gradient(to bottom, @itc, shade(@itc, 3.2)); */
+    background: linear-gradient(to bottom, @itc, shade(@itc, 3.2)); 
     color: @bg1;
     border-radius: 10px;
     padding: 0px 7px;
@@ -98,14 +99,14 @@ window#waybar {
     background-color: @itc;
     border-radius: 5px;
 }
-tooltip {
+#tooltip {
     background-color: transparent;
     border: none;
     box-shadow: none;
     text-shadow: none;
 }
 
-tooltip label {
+#tooltip label {
     background-color: @bg1;
     color: @itc;           
     border: none;
@@ -137,4 +138,13 @@ tooltip label {
 #brightness scale trough highlight {  
     background-color: @itc;
     min-height: 8px;
+}
+
+#backlight {
+    border-radius: 16px 0px 0px 15px;
+    margin-right: 0px;
+}
+#battery {
+    border-radius: 0px 16px 16px 0px;
+    margin-left: 0px;
 }
