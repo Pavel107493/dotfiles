@@ -1,3 +1,11 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
 # nitch
 # pokemon-colorscripts --random
 # figlet -f small " Arch Linux"
@@ -45,7 +53,6 @@ alias ls="ls --color=auto"
 alias la="la --color=auto"
 alias rm="trash-put"
 alias rp="realpath"
-alias vim="nvim"
 alias proxy10808="env https_proxy=http://127.0.0.1:10808"
 alias gitkraken="gitkraken --force-device-scale-factor=0.8 --no-deprecation"
 
