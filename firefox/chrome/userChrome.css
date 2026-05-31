@@ -1,0 +1,50 @@
+#back-button, #forward-button { display: none !important; }
+
+.tab-background {
+    border-radius: 6px !important; /* Значение 40px гарантированно сделает края полукруглыми */
+    margin-block: 4px !important;   /* Добавит немного свободного места сверху и снизу */
+    margin-inline: 2px !important;  /* Добавит отступы между вкладками, чтобы они не слипались */
+}
+#urlbar-input {
+  text-align: center !important;
+}
+
+#urlbar[focused] #urlbar-input {
+  text-align: left !important;
+}
+/* Скрыть крестик на вкладках */
+.tab-close-button {
+  display: none !important;
+}
+
+Убираем пустое место, которое резервировалось под кнопку
+.tab-label-container {
+    margin-inline-end: 0px !important;
+}
+
+#tabs-newtab-button, #NewTabButton {
+  display: none !important;
+}
+
+/* Уменьшаем высоту панели вкладок */
+:root {
+  --tab-min-height: 26px !important; /* Стандартно 32px+ */
+}
+
+/* Убираем лишние отступы у вкладок */
+.tabbrowser-tab {
+  min-height: var(--tab-min-height) !important;
+}
+
+
+/* Уменьшаем высоту главной панели инструментов */
+#nav-bar {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  max-height: 30px !important;
+}
+
+/* Уменьшаем размер иконок на панели, чтобы они не обрезались */
+#nav-bar .toolbarbutton-1 {
+  padding: 2px !important;
+}
