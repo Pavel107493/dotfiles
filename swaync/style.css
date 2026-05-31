@@ -239,14 +239,14 @@
   padding: 2px;
   margin: 10px;
   border-radius: 20px 10px 10px 10px;
-  background: @bg2;
+  background: @bg1;
 }
 
 /* Отдельная кнопка в сетке */
 .widget-buttons-grid>flowbox>flowboxchild>button {
   margin: 3px;
   padding: 2px 19px;            /* Размер кнопок — меняй padding */
-  background: @bg1;
+  background: #000000;
   color: @itc2;
   border-radius: 16px;
   transition: background-color 0.15s ease-in-out;
@@ -271,7 +271,7 @@
    ============================================= */
 .widget-volume,
 .widget-backlight {
-  background: @bg2;
+  background: @bg1;
   padding: 5px;
   margin: 0px 10px 10px 10px;
   font-size: 18px;              /* Размер иконок громкости/яркости */
@@ -283,7 +283,7 @@
    ============================================= */
 .widget-mpris {
   color: @text-color;
-  background: @bg2;
+  background: @bg1;
   margin: 0px 10px 10px 10px;
   box-shadow: none;
   border-radius: 10px;

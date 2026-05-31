@@ -67,8 +67,16 @@
           "command": "~/.config/xray/xray.sh"
         },
         {
-          "label": " ",
-          "command": "swaync-client -t && Telegram"
+          "label": "",
+          "command": "swaync-client -t && firefox https://www.twitch.tv"
+        },
+        {
+          "label": "",
+          "command": "swaync-client -t && firefox https://github.com/"
+        },
+        {
+          "label": "",
+          "command": "swaync-client -t && firefox https://x.com/"
         }
       ]
     }

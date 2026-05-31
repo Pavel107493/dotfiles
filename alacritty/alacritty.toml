@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/hypr/colors/term_alacritty.toml"
+    # "~/.config/hypr/colors/term_alacritty.toml"
 ]
 [env]
 TERM = "xterm-256color"
@@ -67,7 +67,7 @@ text = "#000000"
 [colors.normal]
 black   = "#292531"
 red     = "#b32e39"
-# green   = "#1dd0e7"
+green   = "#1dd0e7"
 yellow  = "#a1795c"
 blue    = "#2f5990"
 magenta = "#727399"
@@ -77,7 +77,7 @@ white   = "#c9c7c6"
 [colors.bright]
 black   = "#605d65"
 red     = "#dd6459"
-# green   = "#1ccfe6"
+green   = "#1ccfe6"
 yellow  = "#d9a728"
 blue    = "#4281d1"
 magenta = "#ba6dc3"

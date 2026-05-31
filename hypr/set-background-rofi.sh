@@ -102,9 +102,6 @@ awww img "$IMAGE" \
     # --transition-type wipe\
     # --transition-duration 1.7
 
-sleep 0.5
-
-echo "Готово: $SYMLINK_PATH → $(basename "$IMAGE")"
 
 # Обновление темы
 sleep 0.5
@@ -116,4 +113,5 @@ pkill -SIGUSR2 waybar
 sleep 0.5
 eww reload
 sleep 0.5
-swaync --replace
+pkill -SIGUSR2 swaync
+

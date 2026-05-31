@@ -8,7 +8,11 @@ pane_frames false // Раки панелей
 show_startup_tips false 
 mouse_mode true // Использование мыши для работы с панелями
 
- 
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
 
 /////////////////////////////
 ////////    ТЕМА    ////////
