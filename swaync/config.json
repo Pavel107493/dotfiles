@@ -63,8 +63,8 @@
           "command": "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
         },
         {
-          "label": "󰖂 ",
-          "command": "~/.config/xray/xray.sh"
+          "label": " ",
+          "command": "swaync-client -t && firefox https://music.youtube.com/"
         },
         {
           "label": "",
