@@ -78,7 +78,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: linear-gradient(to bottom, @itc, shade(@itc, 3.2)); 
+    background: @itc;
+    /* background: linear-gradient(to bottom, @itc, shade(@itc, 3.2)); */ 
     color: @bg1;
     border-radius: 10px;
     padding: 0px 7px;
