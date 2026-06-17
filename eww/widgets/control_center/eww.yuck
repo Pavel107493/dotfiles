@@ -1,0 +1,30 @@
+(defpoll volume :interval "1s"
+  "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'")
+
+(defpoll is-muted :interval "1s"
+  "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -c MUTED || echo 0")
+
+(defwidget volume-menu []
+  (box :orientation "v" :spacing 0 :class "volume-menu"
+
+    (scale
+      :min 0 :max 100
+      :value volume
+      :orientation "h"
+      :class "volume-slider"
+      :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%")
+
+    (button
+      :class "volume-button"
+      :onclick "eww close volume-menu && pavucontrol &"
+      "Audio settings")))
+
+(defwindow volume-menu
+  :monitor 0
+  :geometry (geometry
+    :x "20px" :y "20px"
+    :width "260px" :height "80px"
+    :anchor "top right")
+  :stacking "overlay"
+  :focusable false
+  (volume-menu))

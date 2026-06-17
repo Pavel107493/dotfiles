@@ -97,7 +97,9 @@
             "car": "",
             "default": [" ", "  ", "   "]
         },
-        "on-click": "pavucontrol" // Требует установки pavucontrol
+
+        "tooltip": false,
+        "on-click": "eww open --toggle volume-menu" // Требует установки pavucontrol
     },
 
     "battery": {

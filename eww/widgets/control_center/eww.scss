@@ -1,0 +1,58 @@
+// --- Material You токены ---
+$md-primary:        #D0BCFF;
+$md-on-primary:     #381E72;
+$md-surface:        #1C1B1F;
+$md-surface-variant:#49454F;
+$md-on-surface:     #E6E1E5;
+$md-outline:        #938F99;
+$md-container:      #2B2930;
+$bg:      #000000;
+
+* {
+  transition: all 120ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.volume-menu {
+  background:    $bg;
+  border-radius: 20px;
+  padding:       0px 20px 0px;
+  border:        2px solid $bg3;
+  min-width:     240px;
+}
+// --- Слайдер ---
+.volume-slider {
+  trough {
+    background:    $bg1;
+    border-radius: 99px;
+    min-height:    4px;
+  }
+
+  highlight {
+    background:    $itc;
+    border-radius: 99px;
+
+  }
+
+  slider {
+    background:   $md-primary;
+    border-radius: 50%;
+    min-width:    20px;
+    min-height:   20px;
+    box-shadow:   0 2px 8px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      background:  lighten($md-primary, 8%);
+      min-width:   24px;
+      min-height:  24px;
+    }
+  }
+}
+.volume-button {
+  background: $bg2;
+  color: $itc2;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
