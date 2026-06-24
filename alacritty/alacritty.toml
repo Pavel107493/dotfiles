@@ -41,9 +41,9 @@ shape = "Block"   # Форма: "Block" (блок), "Underline" (подчерк�
 blinking = "Off"   # Режим мигания: "Never", "Off", "On" или "Always"
 
 [window]
-padding = { x = 7, y = 4 }
+padding = { x = 20, y = 20 }
 dynamic_title = true
-opacity = 0.9
+opacity = 1.0 #0.9
 dynamic_padding = true
 [mouse]
 hide_when_typing = true
