@@ -1,0 +1,41 @@
+.nemo-menu {
+  padding: 8px;
+  border-radius: 0px 0px 18px 18px;
+  border: 1px solid $itc;
+  border-top: none;
+  background: #000000;
+}
+
+.nemo-desktop-btn,
+.nemo-documents-btn,
+.nemo-downloads-btn,
+.nemo-music-btn,
+.nemo-pictures-btn,
+.nemo-projects-btn {
+  border: 1px solid #000000;
+  margin-bottom: 2px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: $bg3;
+  color: #aeaeae;
+  font-family: "Adwaita Sans Medium";
+  font-weight: 600;
+}
+
+.nemo-desktop-btn:hover,
+.nemo-documents-btn:hover,
+.nemo-downloads-btn:hover,
+.nemo-music-btn:hover,
+.nemo-pictures-btn:hover,
+.nemo-projects-btn:hover {
+  background: $bg4;
+}
+
+.nemo-projects-btn {
+border-radius: 4px 4px  14px 14px;
+margin-bottom: 0px;
+}
+
+.nemo-desktop-btn {
+border-radius: 14px 14px 4px 4px;
+}

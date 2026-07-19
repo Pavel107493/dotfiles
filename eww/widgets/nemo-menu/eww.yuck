@@ -1,0 +1,19 @@
+(defwindow nemo-menu
+  :monitor 0
+  :geometry (geometry
+    :x "20px"
+    :y "0px"
+    :width "160px"
+    :anchor "top right")
+  :stacking "fg"
+  :windowtype "dialog"
+  
+  (box :class "nemo-menu" :orientation "vertical" 
+    (button :class "nemo-desktop-btn" :onclick "nemo ~/Desktop" "Desktop") 
+    (button :class "nemo-documents-btn" :onclick "nemo ~/Documents" "Documents") 
+    (button :class "nemo-downloads-btn" :onclick "nemo ~/Downloads" "Downloads") 
+    (button :class "nemo-music-btn" :onclick "nemo ~/Music" "Music") 
+    (button :class "nemo-pictures-btn" :onclick "nemo ~/Pictures" "Pictures") 
+    (button :class "nemo-projects-btn" :onclick "nemo ~/Projects" "Projects") 
+    
+  ))

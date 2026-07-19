@@ -1,5 +1,4 @@
 (include "./widgets/clock/clock.yuck")
-(include "./widgets/activate-linux/eww.yuck")
-(include "./widgets/control_center/eww.yuck")
-(include "./widgets/samurai-stiker/eww.yuck")
+(include "./widgets/nemo-menu/eww.yuck")
+(include "./widgets/corner-bridge/corner-bridge.yuck")
 

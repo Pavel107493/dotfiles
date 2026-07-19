@@ -1,0 +1,38 @@
+;; ── widgets/corner-bridge ─────────────────────────────────────────
+;; Ingrown black corner silhouettes that bridge the waybar into the
+;; screen edges. Radius (20px) must match the SVG files' own size AND
+;; your Hyprland `decoration:rounding` value for a seamless match.
+
+(defwidget corner-bridge [path]
+  (box :class "corner-bridge-box"
+       :halign "start"
+       :valign "start"
+    (image :path path
+           :image-width 16
+           :image-height 16)))
+
+(defwindow corner-bridge-left
+  :monitor 0
+  :geometry (geometry :x "0px"
+                       :y "0px"
+                       :width "16px"
+                       :height "16px"
+                       :anchor "top left")
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  :transparent true
+  (corner-bridge :path "${EWW_CONFIG_DIR}/widgets/corner-bridge/corner-left.svg"))
+
+(defwindow corner-bridge-right
+  :monitor 0
+  :geometry (geometry :x "0px"
+                       :y "0px"
+                       :width "16px"
+                       :height "16px"
+                       :anchor "top right")
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  :transparent true
+  (corner-bridge :path "${EWW_CONFIG_DIR}/widgets/corner-bridge/corner-right.svg"))

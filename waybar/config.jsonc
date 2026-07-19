@@ -2,14 +2,14 @@
     "layer": "top",
     "position": "top",
     "height": 22, 
-    "margin-top": 3,
-    "margin-left": 4,
-    "margin-right": 4,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
     "spacing": 0,
 
     "modules-left": [ "tray", "network" ],
-    "modules-center": ["clock", "hyprland/workspaces"],
-    "modules-right": ["hyprland/language", "pulseaudio", "backlight", "battery", "custom/notifications"],
+    "modules-center": ["clock", "hyprland/workspaces", "custom/weather"],
+    "modules-right": ["hyprland/language", "pulseaudio", "group/brightness", "battery", "custom/notifications"],
 
     "clock": {
         "interval": 1,
@@ -110,7 +110,7 @@
         "format": "{icon}   {capacity} % ",
         "format-charging": "   {capacity} %",
         "format-plugged": "   {capacity} %",
-        "format-alt": "{icon}   {capacity} %",
+        "format-alt": "{icon}   {capacity} % ",
         "format-full": "",
         "format-icons": ["", "", "", "", ""],
         "on-click": "" ,
@@ -123,6 +123,25 @@
         "on-scroll-down": "brightnessctl set 1%-",
         "tooltip": false
     },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight" // Опционально: укажите конкретное устройство
+    },
+    "group/brightness": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 200, // Скорость анимации (мс)
+            "children-class": "not-power", // Класс для стилизации скрытых элементов
+            "transition-left-to-right": true, // Направление открытия
+            "click-to-reveal": true
+        },
+        "modules": [
+            "backlight",        // Основная иконка (всегда видна)
+            "backlight/slider"  // Скрытый ползунок (появится при наведении или клике)
+        ]
+    },
 
     "memory": {
         "interval": 30,
@@ -133,5 +152,11 @@
         "format": "",
         "on-click": "swaync-client -t",
         "tooltip": false
+    },
+
+    "custom/weather": {
+        "exec": "curl -s 'wttr.in/Omsk?format=1'",
+        "interval": 300,
+        "tooltip": true
     }
 }

@@ -1,2 +1,3 @@
-eww open samurai-stiker
-eww open activate-linux
+eww open clock-window
+eww open corner-bridge-left
+eww open corner-bridge-right
