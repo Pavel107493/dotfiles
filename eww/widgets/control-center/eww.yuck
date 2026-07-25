@@ -1,0 +1,114 @@
+(defpoll weather_control_center
+  :initial ""
+  :interval "30m"
+  "curl -s 'wttr.in/Omsk?format=1' | sed -E 's/[0-9A-Za-z°+\\-]+//g' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g'")
+
+(defpoll weather_control_center_temp
+  :initial ""
+  :interval "30m"
+  "curl -s 'wttr.in/Omsk?format=1' | sed -E 's/[^0-9+°—-]+//g'")
+
+;; текущий активный профиль (опрос системы)
+(defpoll current_power_profile
+  :initial "balanced"
+  :interval "5s"
+  "powerprofilesctl get")
+
+
+(defpoll wifi_status
+  :initial "enabled"
+  :interval "3s"
+  "nmcli radio wifi")
+
+(defpoll wifi_ssid
+  :initial "Offline"
+  :interval "3s"
+  "bash /home/pavel/.dotfiles/eww/widgets/control-center/wifi/wifi_status.sh")
+(defwindow control-center
+  :monitor 0
+  :geometry (geometry
+    :x "0px"
+    :y "10px"
+    :height "200px"
+    :width "40%"
+    :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  :windowtype "toolbar"
+
+(overlay
+(box :class "control_center"
+
+    ;; погода — прижата к левому краю, по центру по вертикали
+    (box :class "weather_control_center_box"
+         :orientation "horizontal"
+         :hexpand false
+            :valign "start"
+     :vexpand false
+         :halign "start"
+         :valign "start"
+      (label :text "${weather_control_center}"
+        :class "weather_control_center_icon")
+      (box :class "weather_control_center_info"
+           :orientation "vertical"
+        (label :text "${weather_control_center_temp}"
+          :class "weather_control_center_temp")
+        (label :text "Omsk"
+          :class "weather_control_center_local")))
+
+
+
+  (button :class "wifi-box"
+         :hexpand false
+         :vexpand false
+            :halign "start"
+            :valign "start"
+          :onclick {wifi_status == "enabled" 
+                      ? "nmcli radio wifi off" 
+                      : "nmcli radio wifi on"}
+    (box :orientation "horizontal" :space-evenly false
+
+      (image :path {wifi_status == "enabled" 
+                      ? "/home/pavel/.dotfiles/eww/widgets/control-center/wifi/wifi_on.svg" 
+                      : "/home/pavel/.dotfiles/eww/widgets/control-center/wifi/wifi_off.svg"}
+             :image-width 20
+             :image-height 20
+             :class "wifi-icon")
+
+      (label :text "${wifi_ssid}"
+             :class "wifi-label"
+             :halign "start"
+             :hexpand true)
+    )
+  )
+    (box :class "power_control_center_box"
+         :hexpand false
+         :vexpand false
+            :halign "end"
+            :valign "start"
+        (button :class "control_center_power_btn"
+            :halign "center"
+            :valign "center"
+            :onclick {current_power_profile == "power-saver" 
+                ? "powerprofilesctl set balanced && eww update current_power_profile=balanced"
+                : current_power_profile == "balanced"
+                ? "powerprofilesctl set performance && eww update current_power_profile=performance"
+                : "powerprofilesctl set power-saver && eww update current_power_profile=power-saver"}
+            (image :path {current_power_profile == "power-saver" 
+                ? "/home/pavel/.dotfiles/eww/widgets/control-center/power_control/energy_savings.svg"
+                : current_power_profile == "balanced"
+                ? "/home/pavel/.dotfiles/eww/widgets/control-center/power_control/balance.svg"
+                : "/home/pavel/.dotfiles/eww/widgets/control-center/power_control/performance.svg"}
+                :image-width 24
+                :image-height 24)
+        )
+    )
+
+
+
+
+
+
+)
+)
+)

@@ -1,0 +1,48 @@
+
+(defpoll weather-widget-icon
+  :initial ""
+  :interval "10m"
+  "curl -s 'wttr.in/Omsk?format=1' | sed -E 's/[0-9A-Za-z°+\\-]+//g' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g'")
+
+(defpoll weather-widget-temp
+  :initial ""
+  :interval "30m"
+  "curl -s 'wttr.in/Omsk?format=1' | sed -E 's/[^0-9+°—-]+//g'")
+
+(defwindow weather-widget
+  :monitor 0
+  :geometry (geometry
+    :x "30px"
+    :y "30px"
+    :height "50px"
+    :width "150px"
+    :anchor "top left")
+  :stacking "bg"
+  :exclusive true
+  :windowtype "toolbar"
+
+(overlay
+(box :class "weather-widget"
+
+    ;; погода — прижата к левому краю, по центру по вертикали
+    (box :class "weather-widget-box"
+         :orientation "horizontal"
+         :hexpand false
+            :valign "start"
+     :vexpand false
+         :halign "start"
+         :valign "start"
+      (label :text "${weather-widget-icon}"
+        :class "weather-widget-icon")
+        (label :text "${weather-widget-temp}"
+          :class "weather-widget-temp")
+))))
+
+
+
+
+
+
+
+
+

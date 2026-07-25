@@ -1,0 +1,23 @@
+
+(defpoll battery :interval 30 "home/pavel/.dotfiles/eww/widgets/top-panel.sh")
+
+
+
+(defwindow top-panel
+  :monitor 0
+  :geometry (geometry
+    :x "0px"
+    :y "10px"
+    :height "20px"
+    :width "100%"
+    :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  :windowtype "toolbar"
+  
+  (box :class "nemo-menu" :orientation "horizontal" 
+    (button :class "nemo-desktop-btn"   :onclick "eww open --toggle  nemo-menu & nohup nemo ~/Desktop >/dev/null 2>&1&"   "Desktop") 
+  (box :class "battery"
+    (label :text "${battery.icon}")
+    (label :text "${battery.percent}%"))
+  ))

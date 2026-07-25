@@ -1,4 +1,7 @@
 (include "./widgets/clock/clock.yuck")
 (include "./widgets/nemo-menu/eww.yuck")
+;(include "./widgets/control-center/eww.yuck")
+(include "./widgets/weather-widget/eww.yuck")
+(include "./widgets/top-panel/eww.yuck")
 (include "./widgets/corner-bridge/corner-bridge.yuck")
 

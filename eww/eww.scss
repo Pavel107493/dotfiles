@@ -1,4 +1,13 @@
+* { 
+  all: unset;
+}
+window {
+  background-color: #000000;
+}
 @import "../../.config/hypr/colors/color.scss";
 @import "widgets/nemo-menu/eww";
+@import "widgets/control-center/eww";
 @import "widgets/clock/clock";
 @import "widgets/corner-bridge/corner-bridge";
+@import "widgets/weather-widget/eww";
+@import "widgets/top-panel/eww";

@@ -1,0 +1,85 @@
+$control-center-card-radius: 10px;
+
+.control_center {
+  padding: 8px;
+  border-radius: 14px;
+  border: 0px solid $itc;
+  border-top: none;
+  background: rgba(0, 0, 0, 0.8);
+  font-family: "Adwaita Sans Medium";
+  font-weight: 600;
+
+}
+.weather_control_center_box {
+  background: $bg3;
+  border-radius: $control-center-card-radius;
+  margin: 2px;
+  min-width: 160px;
+  min-height: 120px;
+}
+
+.weather_control_center_icon {
+  font-size: 60px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+.weather_control_center_temp {
+  font-size: $control-center-card-radius;
+  padding-bottom: 0px;
+  font-size: 20px;
+}
+
+.weather_control_center_local {
+  font-size: 12px;
+  padding-bottom: 0px;
+}
+.power_control_center_box{
+  background: $bg3;
+  border-radius: $control-center-card-radius;
+  margin: 2px;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 6px 6px;
+}
+
+
+
+
+
+.wifi-btn {
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 8px;
+  background-color: $bg3;
+  border: none;
+  font-size: 16px;
+}
+
+
+
+.wifi-label {
+  font-size: 13px;
+  margin-left: 8px;
+  color: #aeaeae;
+}
+
+
+.wifi-box {
+  min-width: 100px;
+  min-height: 38px;
+  padding: 6px 12px;
+  background-color: $bg3;
+  border-radius: $control-center-card-radius;
+  border: none;
+  margin: 2px;
+}
+
+.wifi-icon {
+  margin-right: 8px;
+}
+
+.wifi-label {
+  font-size: 12px;
+  color: #cdd6f4;
+}

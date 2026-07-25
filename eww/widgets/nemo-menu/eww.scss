@@ -1,9 +1,9 @@
 .nemo-menu {
   padding: 8px;
-  border-radius: 0px 0px 18px 18px;
-  border: 1px solid $itc;
+  border-radius: 19px;
+  border: 0px solid $itc;
   border-top: none;
-  background: #000000;
+  background: rgba(0, 0, 0, 0.70);
 }
 
 .nemo-desktop-btn,
@@ -12,10 +12,10 @@
 .nemo-music-btn,
 .nemo-pictures-btn,
 .nemo-projects-btn {
-  border: 1px solid #000000;
   margin-bottom: 2px;
-  padding: 2px 8px;
-  border-radius: 4px;
+  font-size: 10px;
+  padding: 6px 8px;
+  border-radius: 20px;
   background: $bg3;
   color: #aeaeae;
   font-family: "Adwaita Sans Medium";
@@ -32,10 +32,7 @@
 }
 
 .nemo-projects-btn {
-border-radius: 4px 4px  14px 14px;
 margin-bottom: 0px;
 }
 
-.nemo-desktop-btn {
-border-radius: 14px 14px 4px 4px;
-}
+

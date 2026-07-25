@@ -1,19 +1,21 @@
+
+
 (defwindow nemo-menu
   :monitor 0
   :geometry (geometry
-    :x "20px"
-    :y "0px"
-    :width "160px"
-    :anchor "top right")
+    :x "120px"
+    :y "6px"
+    :width "140px"
+    :anchor "top left")
   :stacking "fg"
-  :windowtype "dialog"
+  :windowtype "toolbar"
   
   (box :class "nemo-menu" :orientation "vertical" 
-    (button :class "nemo-desktop-btn" :onclick "nemo ~/Desktop" "Desktop") 
-    (button :class "nemo-documents-btn" :onclick "nemo ~/Documents" "Documents") 
-    (button :class "nemo-downloads-btn" :onclick "nemo ~/Downloads" "Downloads") 
-    (button :class "nemo-music-btn" :onclick "nemo ~/Music" "Music") 
-    (button :class "nemo-pictures-btn" :onclick "nemo ~/Pictures" "Pictures") 
-    (button :class "nemo-projects-btn" :onclick "nemo ~/Projects" "Projects") 
+    (button :class "nemo-desktop-btn"   :onclick "eww open --toggle  nemo-menu & nohup nemo ~/Desktop >/dev/null 2>&1&"   "Desktop") 
+    (button :class "nemo-documents-btn" :onclick "eww open --toggle  nemo-menu & nohup nemo ~/Documents >/dev/null 2>&1&" "Documents") 
+    (button :class "nemo-downloads-btn" :onclick "eww open --toggle  nemo-menu & nohup nemo ~/Downloads >/dev/null 2>&1&"  "Downloads") 
+    (button :class "nemo-music-btn"     :onclick "eww open --toggle  nemo-menu & nohup nemo ~/Music >/dev/null 2>&1&"     "Music") 
+    (button :class "nemo-pictures-btn"  :onclick "eww open --toggle  nemo-menu & nohup nemo ~/Pictures >/dev/null 2>&1&"  "Pictures") 
+    (button :class "nemo-projects-btn"  :onclick "eww open --toggle  nemo-menu & nohup nemo ~/Projects >/dev/null 2>&1&"  "Projects") 
     
   ))
