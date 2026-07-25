@@ -1,6 +1,6 @@
 [general]
 import = [
-    # "~/.config/hypr/colors/term_alacritty.toml"
+    "~/.config/hypr/colors/term_alacritty.toml"
 ]
 [env]
 TERM = "xterm-256color"
@@ -43,7 +43,7 @@ blinking = "Off"   # Режим мигания: "Never", "Off", "On" или "Alw
 [window]
 padding = { x = 20, y = 20 }
 dynamic_title = true
-opacity = 1.0 #0.9
+opacity = 0.9
 dynamic_padding = true
 [mouse]
 hide_when_typing = true
@@ -67,7 +67,7 @@ text = "#000000"
 [colors.normal]
 black   = "#292531"
 red     = "#b32e39"
-green   = "#1dd0e7"
+# green   = "#1dd0e7"
 yellow  = "#a1795c"
 blue    = "#2f5990"
 magenta = "#727399"
