@@ -192,8 +192,8 @@
    ============================================= */
 .control-center {
   background: #000000;
-  border-radius: 24px 0px 0px 24px;
-  border: 0px solid #aeaeae; /* Зелёная рамка панели */
+  border-radius: 22px;
+  border: 2px solid @itc2; /* Зелёная рамка панели */
 }
 
 
@@ -236,20 +236,21 @@
    ============================================= */
 .widget-buttons-grid {
   font-size: x-large;
-  padding: 2px;
+  padding: 0px;
   margin: 10px;
-  border-radius: 20px 10px 10px 10px;
-  background: @bg1;
+  border-radius: 10px;
+  background: transparent;
 }
 
 /* Отдельная кнопка в сетке */
 .widget-buttons-grid>flowbox>flowboxchild>button {
-  margin: 3px;
-  padding: 2px 19px;            /* Размер кнопок — меняй padding */
-  background: #000000;
-  color: @itc2;
-  border-radius: 16px;
+  margin: 0px;
+  padding: 5px 20px;            /* Размер кнопок — меняй padding */
+  background: @itc2;
+  color: @bg1;
+  border-radius: 10px;
   transition: background-color 0.15s ease-in-out;
+  font-size: 30px;
 }
 
 /* Кнопка при наведении */
@@ -283,8 +284,8 @@
    ============================================= */
 .widget-mpris {
   color: @text-color;
-  background: @bg1;
-  margin: 0px 10px 10px 10px;
+  background: #000000;
+  margin: 0px;
   box-shadow: none;
   border-radius: 10px;
 }
@@ -293,7 +294,7 @@
 .widget-mpris>box>button,
 .widget-mpris-player,
 .widget-mpris-album-art {
-  border-radius: 6px;
+  border-radius: 16px;
   box-shadow: none;
   margin: 10px;
   background-color: transparent;
@@ -301,13 +302,12 @@
 
 /* Скрываем фоновое изображение обложки */
 picture.mpris-background {
-  opacity: 0;                   /* Поставь 1 чтобы показать */
+  opacity: 1;                   /* Поставь 1 чтобы показать */
+  color: #874677;
 }
 .widget-mpris-album-art {
   min-width: 40px;
   min-height: 40px;
-  /* max-width: 40px; */
-  /* max-height: 40px; */
 }
 /* =============================================
    КНОПКИ ВНУТРИ УВЕДОМЛЕНИЯ
