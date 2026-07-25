@@ -7,13 +7,14 @@
     "margin-right": 0,
     "spacing": 0,
 
-    "modules-left": [ "tray", "network" ],
-    "modules-center": ["clock", "hyprland/workspaces", "custom/weather"],
-    "modules-right": ["hyprland/language", "pulseaudio", "group/brightness", "battery", "custom/notifications"],
+    "modules-left": [ "tray", "network", "custom/nemo-folder" ],
+    "modules-center": ["clock", "hyprland/workspaces", "custom/notifications"],
+    "modules-right": ["hyprland/language", "pulseaudio", "group/brightness", "battery"],
 
     "clock": {
         "interval": 1,
         "format": "{:%I:%M %p}", //:%I:%M:%p
+        "on-click": "eww open --toggle  control-center",
         "tooltip": false
     },
 
@@ -149,14 +150,13 @@
         "max-length": 20
     },
     "custom/notifications": {
-        "format": "",
+        "format": "󱜾",
         "on-click": "swaync-client -t",
         "tooltip": false
     },
-
-    "custom/weather": {
-        "exec": "curl -s 'wttr.in/Omsk?format=1'",
-        "interval": 300,
-        "tooltip": true
+    "custom/nemo-folder": {
+        "format": "   Nemo",
+        "on-click":  "eww open --toggle  nemo-menu",
+        "tooltip": false
     }
 }

@@ -11,7 +11,7 @@ font-weight: 600;
 }
 /* Общий сброс фона основной панели */
 window#waybar {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 1.0);
     margin: 50px 50px;
     border-radius: 0px;  /* Фиксированное скругление */
     padding: 0 10px;  /* Фиксированные отступы */
@@ -19,6 +19,8 @@ window#waybar {
 }
 
 /* Стили для часов и воркспэйсов (черные капсулы) */
+#custom-weather, 
+#custom-nemo-folder,
 #pulseaudio,
 #custom-notifications,
 #custom-player,
@@ -60,7 +62,7 @@ window#waybar {
 }
 
 #clock {
-    border-radius: 16px 6px 6px 15px;
+    border-radius: 20px;
     margin-right: 2px;
 }
 #workspaces {
@@ -70,7 +72,7 @@ window#waybar {
     padding: 2px 2px;
     margin: 0 2px;
 
-    border-radius: 6px;
+    border-radius: 16px;
     margin-left: 2px;
 }
 
@@ -89,7 +91,7 @@ window#waybar {
     background: @itc;
     /* background: linear-gradient(to bottom, @itc, shade(@itc, 3.2)); */ 
     color: @bg1;
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 0px 7px;
     margin: 2px 2px;
 
@@ -166,13 +168,26 @@ window#waybar {
     margin-left: 2px;
 }
 
-#custom-weather {
 
-    background-color: @bg3;
-    color: @itc;
-    border-radius: 20px;
-    padding: 2px 10px;
-    margin: 0 2px;
+#custom-nemo-folder:hover,
+#pulseaudio:hover,
+#custom-notifications:hover,
+#custom-player:hover,
+#memory:hover,
+#backlight-slider:hover,
+#battery:hover,
+#language:hover,
+#custom-swaync:hover,
+#network:hover,
+#clock:hover 
+#backlight:hover 
+#tray:hover 
+#brightness:hover {
+    background-color: @bg4;
+}
 
-    border-radius: 6px 16px 16px 6px;
+#custom-notifications {
+    font-size: 14px;
+    padding-left: 8px;
+    padding-right: 12px;
 }
